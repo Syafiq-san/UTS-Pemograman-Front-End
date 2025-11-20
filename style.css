@@ -1,0 +1,279 @@
+/* General Reset & Typography */
+:root {
+    --primary-color: #1a73e8; /* Biru Google/Modern */
+    --secondary-color: #34a853; /* Hijau (Aksen Positif) */
+    --accent-color: #fbbc05; /* Kuning (Perhatian/Diskon) */
+    --bg-light: #f4f7f9;
+    --text-dark: #202124;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    padding-top: 60px; /* Jaga konten agar tidak tertutup header fixed */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header/Navbar (Disesuaikan agar fixed) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed; /* Penting agar header tetap di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 20px;
+    padding: 8px 0;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.navbar nav a:hover {
+    color: var(--primary-color);
+}
+
+.navbar nav a i {
+    margin-right: 5px;
+}
+
+/* --- Filter Section --- */
+.filter-section {
+    display: flex;
+    gap: 12px;
+    margin: 30px auto; /* Margin atas/bawah dan tengah */
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    flex-wrap: wrap; 
+    max-width: 1200px;
+}
+
+.filter-section input, 
+.filter-section select, 
+.filter-section button {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    height: 40px; 
+    /* Fleksibilitas */
+    flex-grow: 1; 
+    min-width: 120px;
+}
+
+#search-input {
+    flex-grow: 3; /* Beri lebih banyak ruang untuk input pencarian */
+    min-width: 200px;
+}
+
+.filter-section button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 150px;
+}
+
+.filter-section button:hover {
+    background-color: #145cb9;
+    transform: translateY(-1px);
+}
+
+/* --- Product Listing and Grid --- */
+.product-listing {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+#listing-title {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+    flex-grow: 1; /* Pastikan info mengisi ruang tersisa */
+}
+
+.product-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.badge-diskon {
+    background-color: #ea4335; /* Merah */
+}
+
+.badge-terfavorit {
+    background-color: var(--secondary-color); /* Hijau */
+}
+
+.product-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    min-height: 40px; /* Agar judul tidak membuat card melompat saat pendek */
+}
+
+.product-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 40px;
+    background-color: #e0e0e0;
+    color: #444;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+}
+footer i {
+    color: var(--secondary-color);
+    margin: 0 3px;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    /* Navbar sedikit lebih kompak */
+    .navbar nav a {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 100px; /* Tambahkan padding lebih besar karena navbar akan wrap */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+    .navbar nav {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar nav a {
+        margin: 0 5px;
+        padding: 5px 0;
+        flex: 1;
+        text-align: center;
+    }
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .filter-section input, 
+    .filter-section select, 
+    .filter-section button {
+        width: 100%;
+        min-width: 100%;
+    }
+    #search-input {
+        flex-grow: 1; /* Reset flex-grow di mobile */
+    }
+    .grid-container {
+        /* Jika menggunakan minmax(250px, 1fr), ini sudah cukup baik,
+           tetapi terkadang bisa diubah menjadi satu kolom penuh untuk layar sangat kecil */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

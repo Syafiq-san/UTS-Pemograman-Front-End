@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampus Beken | Jual Beli Barang Bekas Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">Kampus Beken 🎓</h1>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> Beranda</a>
+            <a href="#" id="post-link"><i class="fas fa-camera"></i> Jual Barang</a>
+            <a href="#" id="login-link"><i class="fas fa-user-circle"></i> Login/Daftar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filter-section">
+            <input type="text" id="search-input" placeholder="Cari buku, elektronik, kosan...">
+            
+            <select id="filter-campus">
+                <option value="">Semua Kampus</option>
+            </select>
+            
+            <select id="filter-category">
+                <option value="">Semua Kategori</option>
+                <option value="buku">Buku & Diktat</option>
+                <option value="elektronik">Elektronik</option>
+                <option value="kos">Perlengkapan Kos</option>
+                <option value="pakaian">Pakaian</option>
+                <option value="hobi">Hobi & Olahraga</option>
+                <option value="praktikum">Alat Praktikum</option>
+            </select>
+
+            <select id="filter-price">
+                <option value="">Rentang Harga</option>
+                <option value="0-50000">Di bawah Rp 50 Ribu</option>
+                <option value="50001-200000">Rp 50 Ribu - Rp 200 Ribu</option>
+                <option value="200001-500000">Rp 200 Ribu - Rp 500 Ribu</option>
+                <option value="500001-max">Di atas Rp 500 Ribu</option>
+            </select>
+            
+            <button onclick="filterProducts()"><i class="fas fa-filter"></i> Terapkan Filter</button>
+        </section>
+
+        <section class="product-listing">
+            <h2 id="listing-title">✨ Barang Terbaru di Sekitar Kampus</h2>
+            <div id="product-grid" class="grid-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-copyright"></i> 2025 Kampus Beken. Aplikasi Jual Beli Mahasiswa. Dibuat dengan semangat hemat! <i class="fas fa-leaf"></i></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
